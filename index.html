@@ -1,80 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Kekik Et Döner Menü</title>
+    <link rel="stylesheet" href="css/icerik.css">
 </head>
 <body>
-    <header class="header">
-        <a href="index.html" class="logo">Flue.</a>
-        <div id="menu-icon" class="menu-icon"><i class='bx bx-menu'></i></div>
-            <nav class="navbar">
-                <a href="#about">Menü</a>
-                <a href="#education">Hakkımızda</a>
-                <span class="active-nav"></span>
-            </nav>        
+    <header class="header" style="display:flex; justify-content:space-between; align-items:center; padding:10px 30px;">
+        <a href="index.html" class="logo" style="font-size:2rem; font-weight:bold; color:#222; text-decoration:none;">Kekik Et Döner</a>
+        <img src="images/kekik-logo.png" alt="Kekik Et Döner Logo" style="height:80px;">
     </header>
-
-    <!-- Menüdeki kartlar -->
-    <section class="card" id="card">
+    <section class="slogan" style="text-align:center; margin-top:30px; margin-bottom:20px;">
+        <h2 style="font-size:2rem; color:#b00;">DÖNERİN ZİRVESİ :<br>KEKİK!</h2>
+    </section>
+    <section class="card" id="menu">
+        <h2 class="heading">Menü</h2>
         <div class="card-container">
-            <!-- Sıcak İçecekler -->
-            <div class="card-box sicak-icecekler">                 
-                <a href="sicakicecekler.html"> <!-- Yönlendirme linki -->
-                    <img src="images/hot1.jpg" alt="">
-                    <h4 class="bottom-left">Sıcak İcecekler</h4>                   
-                </a>
-            </div>
-            <!-- Tatlılar -->             
-            <div class="card-box tatlilar">                
-                <a href="tatlilar.html"> <!-- Yönlendirme linki -->                    
-                    <img src="images/tatlı1.jpg" alt="">
-                    <h4 class="bottom-left">Tatlılar</h4> 
-                </a>
-            </div>
-            <!-- Herbal Teas -->
-            <div class="card-box herbal-teas">                
-                <a href="herbalteas.html"> <!-- Yönlendirme linki -->                    
-                    <img src="images/herbal1.jpg" alt="">
-                    <h4 class="bottom-left">Herbal Teas</h4> 
-                </a>
-            </div>
-            <!-- Coctails -->
-            <div class="card-box coctails">
-                
-                <a href="coctails.html"> <!-- Yönlendirme linki -->                    
-                    <img src="images/coctail3.jpg" alt="">
-                    <h4 class="bottom-left">Coctails</h4> 
-                </a>
-            </div>
-            <!-- Smoothies -->            
-            <div class="card-box smoothies">
-                <a href="smoothies.html"> <!-- Yönlendirme linki -->                    
-                    <img src="images/smoothie3.jpg" alt="">
-                    <h4 class="bottom-left">Smoothie</h4> 
-                </a>
-            </div>
-            <!-- Brew Bar -->           
-            <div class="card-box brew-bar">
-                
-                <a href="brewbar.html"> <!-- Yönlendirme linki -->                    
-                    <img src="images/filtrekahve.png" alt="">
-                    <h4 class="bottom-left">brew bar</h4> 
-                </a>
-            </div>
-            <!-- Yemekler -->
-            <div class="card-box yemekler">
-                <a href="yemekler.html"> <!-- Yönlendirme linki -->                    
-                    <img src="images/yemek1.jpg" alt="">
-                    <h4 class="bottom-left">Yemekler</h4> 
-                </a>
-            </div>
+            <div class="card-box"><div class="content"><h4>1000 gr Et Döner</h4><span>1500 TL</span></div></div>
+            <div class="card-box"><div class="content"><h4>500 gr Et Döner</h4><span>750 TL</span></div></div>
+            <div class="card-box"><div class="content"><h4>250 gr Et Döner</h4><span>375 TL</span></div></div>
+            <div class="card-box"><div class="content"><h4>200 gr Et Döner</h4><span>300 TL</span></div></div>
+            <div class="card-box"><div class="content"><h4>150 gr Et Döner</h4><span>225 TL</span></div></div>
+            <div class="card-box"><div class="content"><h4>100 gr Et Döner</h4><span>150 TL</span></div></div>
+            <div class="card-box"><div class="content"><h4>100 gr Lavaş Döner</h4><span>150 TL</span></div></div>
+            <div class="card-box"><div class="content"><h4>150 gr Lavaş Döner</h4><span>225 TL</span></div></div>
+            <div class="card-box"><div class="content"><h4>100 gr Tombik Döner</h4><span>150 TL</span></div></div>
+            <div class="card-box"><div class="content"><h4>150 gr Tombik Döner</h4><span>225 TL</span></div></div>
+            <div class="card-box"><div class="content"><h4>100 gr Ekmek Arası Döner</h4><span>150 TL</span></div></div>
+            <div class="card-box"><div class="content"><h4>100 gr Pilav Üstü Döner</h4><span>190 TL</span></div></div>
+            <div class="card-box"><div class="content"><h4>150 gr Pilav Üstü Döner</h4><span>265 TL</span></div></div>
+            <div class="card-box"><div class="content"><h4>200 gr Pilav Üstü Döner</h4><span>340 TL</span></div></div>
+            <div class="card-box"><div class="content"><h4>Kutu Ayran</h4><span>20 TL</span></div></div>
+            <div class="card-box"><div class="content"><h4>Kutu Ayran Ekşi</h4><span>35 TL</span></div></div>
+            <div class="card-box"><div class="content"><h4>Şalgam Suyu</h4><span>45 TL</span></div></div>
+            <div class="card-box"><div class="content"><h4>Kutu Cola</h4><span>45 TL</span></div></div>
+            <div class="card-box"><div class="content"><h4>Su</h4><span>15 TL</span></div></div>
         </div>
     </section>
-
-    <script src="js/script.js"></script>
+    <footer style="text-align:center; margin-top:40px; color:#333; font-size:1.1rem;">
+        <div style="margin-bottom:8px;">
+            <span style="font-weight:bold;">Cennet Mahallesi<br>Yahya Kemal Beyatlı Caddesi<br>NO:4 Küçükçekmece / İstanbul</span>
+        </div>
+        <div>
+            <span>📞 0532 566 02 51</span>
+        </div>
+    </footer>
 </body>
 </html>
