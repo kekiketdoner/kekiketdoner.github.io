@@ -1,245 +1,120 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: none;
-    border:none;
-    outline: none;
-    scroll-behavior: smooth;
-    font-family: 'Poppins',sans-serif;
-}
-:root{
-    --bg-color:#ffffff;
-    --second-bg-color:#5f2222;
-    --text-color:#ededed;
-    --main-color:#997c45;
-}
-html{
-    font-size:62.5%;
-    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
 }
 
-body{
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --main-color: #b00;
+}
+
+body {
     background: var(--bg-color);
     color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 2rem 9%;
-    background: transparent;
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
-    transition: top 0.3s ease;
-}
-.header.hide {
-    top: -100px; /* Yukarı kaydırarak gizler */
-    position: fixed;
-    width: 100%;
-    z-index: 10;
+    padding: 15px 5%;
+    background: var(--bg-color);
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
 }
 
-.header.sticky{
-    background: var(--bg-color)
-}
-
-.logo{
-    position: relative;
-    font-size: 2.5rem;
+.logo {
+    font-size: 1.8rem;
     color: var(--text-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.slogan {
+    font-size: 0.9rem;
+    color: var(--main-color);
+    margin-top: 2px;
+}
+
+.card {
+    padding: 15px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+.heading {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1.8rem;
+    margin-bottom: 30px;
     font-weight: 600;
 }
 
-.navbar{
-    position: relative;
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.navbar a{
-    font-size: 1.7rem;
+footer {
+    text-align: center;
+    padding: 15px;
+    background: var(--bg-color);
     color: var(--text-color);
-    font-weight: 500;
-    margin-left: 3.5rem;
-    transition: .3s;
+    font-size: 0.9rem;
+    box-shadow: 0 -1px 5px rgba(0,0,0,0.05);
 }
 
-.navbar a:hover,
-.navbar a.active{
-    color: var(--main-color);
+footer div {
+    margin-bottom: 5px;
 }
 
-
-
-section{
-    min-height: 100vh;
-    padding: 10rem 9% 2rem;
+footer span {
+    font-weight: bold;
 }
 
-/*card*/
-
-.card{
-    background: var(--second-bg-color);
-}
-
-.card h2{
-    margin-bottom: 4rem;
-}
-
-.card-container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    gap: 2.5rem;
-}
-
-.card-container .card-box{
-    position: relative;
-    border-radius: 2rem;
-    box-shadow: 0 0 1rem var(--bg-color);
-    overflow: hidden;    
-    width: 100%; /* Kartın genişliği ayarlandı */
-    height: 20rem; /* Yüksekliği resme göre otomatik olarak ayarlanacak */
-}
-
-.card-box img{
-    width: 100%; 
-    height: 20rem; 
-    object-fit: cover;
-    transition: transform 0.5s ease; 
-}
-
-.card-box:hover img{
-    transform: scale(1.1);
-}
-
-/*Denemelik*/
-/* Sol alt köşedeki yazıyı sabitler, her zaman görünür */
-.card-box h4.bottom-left {
-    position: absolute;  /* Konumu sabitler */
-    bottom: 1rem;        /* Alt kenardan uzaklık */
-    left: 1rem;          /* Sol kenardan uzaklık */
-    font-size: 1.5rem;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5); /* Şeffaf bir arka plan */
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    z-index: 2;          /* Diğer elementlerin üstünde olmasını sağlar */
-}
-
-/* Kart hover edildiğinde sol alttaki yazıyı gizler */
-.card-box:hover .bottom-left {
-    display: none;
-}
-
-/* Ortadaki yazı sadece hover sırasında görünür */
-.card-layer h4 {
-    font-size: 3rem;
-    color: white;
-    display: none; /* Varsayılan olarak gizli */
-}
-
-
-/*Denemelik bitiş*/
-.card-box a {
-    text-decoration: none;
-    color: white;   
-    position: relative;     /* İçindeki öğelerin yerleşimi için */
-    display: block;         /* A etiketi tam alanı kaplayacak */
-}
-
-.card-box a:hover h4 {
-    color: #ffffff;
-}
-
-/* Mobil cihazlar (max-width: 768px) */
 @media (max-width: 768px) {
-    .card-container {
-        grid-template-columns: 1fr; /* Mobilde tek sütun */
-        gap: 1.5rem;
-    }
-
     .header {
-        padding: 2rem 5%;
+        padding: 12px 5%;
     }
 
-    .navbar a {
-        font-size: 1.4rem;
-    }   
-}
-
-/* Tabletler (min-width: 768px ve max-width: 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .card-container {
-        grid-template-columns: repeat(2, 1fr); /* Tabletlerde iki sütun */
-        gap: 2rem;
-    }
-
-    .header {
-        padding: 2rem 7%;
-    }
-
-    .navbar a {
+    .logo {
         font-size: 1.6rem;
     }
-    
-}
 
-/* Laptoplar ve masaüstü cihazlar (min-width: 1024px) */
-@media (min-width: 1024px) {
-    .card-container {
-        grid-template-columns: repeat(3, 1fr); /* Masaüstünde üç sütun */
-        gap: 2.5rem;
+    .slogan {
+        font-size: 0.8rem;
     }
 
+    .card {
+        padding: 12px 5%;
+    }
+
+    .heading {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 480px) {
     .header {
-        padding: 2rem 9%;
+        padding: 10px 5%;
     }
 
-    .navbar a {
-        font-size: 1.7rem;
-    }
-   
-}
-
-/* Hamburger ikonu başlangıçta gizli */
-#menu-icon {
-    display: none;    
-    font-size: 3.6rem;
-    cursor: pointer;
-}
-
-/* Ekran genişliği 600px ve altına düştüğünde */
-@media (max-width: 600px) {
-    .navbar {
-        display: none; /* Menü gizlenir */
-        flex-direction: column; /* Açılınca dikey görünsün */
-    }
-    
-    #menu-icon {
-        display: block; /* Hamburger ikonu göster */
-    }
-    
-    .navbar.active {
-        display: flex; /* İkon tıklanınca menü görünür hale gelir */
-        position: absolute;
-        top: 100%; /* Üst menünün hemen altına gelir */
-        left: 0;
-        background-color: white;
-        width: 100%;
-        padding: 1rem 0;
+    .logo {
+        font-size: 1.4rem;
     }
 
-    .navbar a {
-        padding: 1rem;
-        text-align: center;
-        width: 100%;
-        color: #000;
+    .heading {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
     }
 }

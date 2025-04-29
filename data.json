@@ -1,0 +1,80 @@
+{
+  "menu": {
+    "1000_gr_Et_Doner": {
+      "name": "1000 gr Et Döner",
+      "price": "1500"
+    },
+    "500_gr_Et_Doner": {
+      "name": "500 gr Et Döner",
+      "price": "750"
+    },
+    "250_gr_Et_Doner": {
+      "name": "250 gr Et Döner",
+      "price": "375"
+    },
+    "200_gr_Et_Doner": {
+      "name": "200 gr Et Döner",
+      "price": "300"
+    },
+    "150_gr_Et_Doner": {
+      "name": "150 gr Et Döner",
+      "price": "225"
+    },
+    "100_gr_Et_Doner": {
+      "name": "100 gr Et Döner",
+      "price": "150"
+    },
+    "100_gr_Lavas_Doner": {
+      "name": "100 gr Lavaş Döner",
+      "price": "150"
+    },
+    "150_gr_Lavas_Doner": {
+      "name": "150 gr Lavaş Döner",
+      "price": "225"
+    },
+    "100_gr_Tombik_Doner": {
+      "name": "100 gr Tombik Döner",
+      "price": "150"
+    },
+    "150_gr_Tombik_Doner": {
+      "name": "150 gr Tombik Döner",
+      "price": "225"
+    },
+    "100_gr_Ekmek_Arasi_Doner": {
+      "name": "100 gr Ekmek Arası Döner",
+      "price": "150"
+    },
+    "100_gr_Pilav_Ustu_Doner": {
+      "name": "100 gr Pilav Üstü Döner",
+      "price": "190"
+    },
+    "150_gr_Pilav_Ustu_Doner": {
+      "name": "150 gr Pilav Üstü Döner",
+      "price": "265"
+    },
+    "200_gr_Pilav_Ustu_Doner": {
+      "name": "200 gr Pilav Üstü Döner",
+      "price": "340"
+    },
+    "Kutu_Ayran": {
+      "name": "Kutu Ayran",
+      "price": "20"
+    },
+    "Kutu_Ayran_Eksi": {
+      "name": "Kutu Ayran Ekşi",
+      "price": "35"
+    },
+    "Salgam_Suyu": {
+      "name": "Şalgam Suyu",
+      "price": "45"
+    },
+    "Kutu_Cola": {
+      "name": "Kutu Cola",
+      "price": "45"
+    },
+    "Su": {
+      "name": "Su",
+      "price": "15"
+    }
+  }
+}
