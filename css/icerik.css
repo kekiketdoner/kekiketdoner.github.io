@@ -154,15 +154,15 @@ body {
 /* Mobil cihazlar için düzenleme */
 @media (max-width: 768px) {
     .header {
-        padding: 15px 5%;
+        padding: 10px 5%;
     }
 
     .logo {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .slogan {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 
     .card {
@@ -180,7 +180,7 @@ body {
     }
 
     .card-box {
-        padding: 15px 20px;
+        padding: 5px 10px;
     }
 
     .card-box h4 {
@@ -188,8 +188,8 @@ body {
     }
 
     .card-box span {
-        font-size: 1.2rem;
-        padding: 6px 12px;
+        font-size: 1rem;
+        padding: 3px 6px;
     }
 }
 
@@ -199,7 +199,15 @@ body {
     }
 
     .logo {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+    }
+
+    .slogan {
+        font-size: 0.8rem;
+    }
+
+    .card {
+        padding: 15px 5%;
     }
 
     .heading {
@@ -213,15 +221,15 @@ body {
     }
 
     .card-box {
-        padding: 12px 15px;
+        padding: 6px 8px;
     }
 
-    .card-box h4 {
-        font-size: 1.1rem;
-    }
+        .card-box h4 {
+            font-size: 1.1rem;
+        }
 
-    .card-box span {
-        font-size: 1.1rem;
-        padding: 5px 10px;
-    }
+        .card-box span {
+            font-size: 1rem;
+            padding: 3px 7px;
+        }
 }
