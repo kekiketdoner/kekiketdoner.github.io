@@ -4,54 +4,25 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
 }
 
 :root {
     --bg-color: #ffffff;
-    --second-bg-color: #5f2222;
     --text-color: #000000;
-    --main-color: #997c45;
-}
-
-html {
-    font-size: 62.5%;
-    overflow-x: hidden;
+    --main-color: #b00;
 }
 
 body {
     background: var(--bg-color);
     color: var(--text-color);
-    padding-top: 1rem;
 }
 
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 2rem 9%;
-    background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
-    transition: top 0.3s ease;
-}
-/* Header gizlendiğinde */
-.header.hide {
-    top: -100px; /* Yukarı kaydırarak gizler */
-    position: fixed;
-    width: 100%;
-    z-index: 10;
-}
-
-
-.header.sticky {
+    padding: 20px 5%;
     background: var(--bg-color);
 }
 
@@ -59,177 +30,198 @@ body {
     font-size: 2.5rem;
     color: var(--text-color);
     font-weight: 600;
+    text-decoration: none;
 }
 
-.navbar {
-    position: relative;
-}
-
-.navbar a {
-    font-size: 1.7rem;
-    color: var(--text-color);
-    font-weight: 500;
-    margin-left: 3.5rem;
-    transition: 0.3s;
-}
-
-.navbar a:hover,
-.navbar a.active {
+.slogan {
+    font-size: 1.2rem;
     color: var(--main-color);
 }
 
-section {
-    min-height: 100vh;
-    padding: 10rem 9% 2rem;
+.card {
+    padding: 20px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.card .heading{
-    margin-bottom: 4rem;
-    font-size:  3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.heading {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: 600;
 }
 
-/* Kart stilini düzenleme */
 .card-container {
     display: flex;
-    flex-direction: column; /* Alt alta sıralanmasını sağlamak için */
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .card-box {
-    display: flex;
-    align-items: center;
-    background-color: var(--second-bg-color);
-    border-radius: 1rem;
-    padding: 2rem;
-    width: 100%;
-    max-width: 700px; /* Kartın maksimum genişliğini sınırla */
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem; /* Kartlar arasında boşluk */
+    background: white;
+    padding: 20px 25px;
+    margin: 15px 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.03);
 }
 
-.image-container {
-    width: 100px;
-    height: 100px;
-    border-radius: 10%; 
-    overflow: hidden;
-    margin-right: 1.5rem;
+.card-box:hover {
+    transform: translateX(5px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
 }
 
-.image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.content {
+.card-box .content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
 }
 
-.content h4 {    
-    font-size: 2rem;
-    color: white;   
-}
-.content p {    
-    position:absolute;
-    display: block;
+.card-box h4 {
+    margin: 0;
+    color: #333;
     font-size: 1.4rem;
-    color: white;
-    margin: 7rem 5rem 0 0;
-    
-}
-.content span {
-    font-size: 2rem;
-    color: white;
+    font-weight: 500;
 }
 
-.chocolate-info {
+.card-box span {
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: 1.4rem;
+    background: rgba(187,0,0,0.05);
+    padding: 8px 16px;
+    border-radius: 25px;
+}
+
+.category-header {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    padding: 20px 30px;
+    margin: 20px 0;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--main-color);
+    font-size: 1.6rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.category-header:hover {
+    background: linear-gradient(145deg, #f8f8f8, #eeeeee);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.category-content {
+    display: none;
+    padding: 10px 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.category-content.active {
+    display: block;
+}
+
+.toggle-icon {
+    font-size: 1.6rem;
+    transition: transform 0.3s ease;
+    color: var(--main-color);
+    opacity: 0.8;
+}
+
+.category-header.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.loading {
     text-align: center;
-    margin-top: 2rem;
-    font-size: 1rem;
-    font-weight: bold;
-    color: var(--text-color); /* Varsayılan text color */
+    padding: 20px;
+    font-size: 1.2rem;
+    color: #666;
 }
-
-.chocolate-info p {
-    border-top: 1px solid #000; /* Üstte bir çizgi */
-    padding-top: 1rem; /* Metin ile çizgi arası boşluk */
-}
-
 
 /* Mobil cihazlar için düzenleme */
 @media (max-width: 768px) {
-    .card-box {
-        flex-direction: row; /* Mobilde de fotoğrafın solda kalmasını sağlıyor */
-        text-align: left;
-        padding: 2rem;
+    .header {
+        padding: 15px 5%;
     }
 
-    .image-container {
-        margin-right: 1.5rem;
+    .logo {
+        font-size: 2rem;
     }
 
-    .content {
-        justify-content: space-between;
-        flex-direction: row; /* Mobilde de içerik yatayda kalacak */
+    .slogan {
+        font-size: 1rem;
     }
-    .navbar a {
+
+    .card {
+        padding: 15px 5%;
+    }
+
+    .heading {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .category-header {
+        padding: 15px 20px;
         font-size: 1.4rem;
-    }   
+    }
+
+    .card-box {
+        padding: 15px 20px;
+    }
+
+    .card-box h4 {
+        font-size: 1.2rem;
+    }
+
+    .card-box span {
+        font-size: 1.2rem;
+        padding: 6px 12px;
+    }
 }
-@media (max-width: 450px) {    
-    .content span{
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px 5%;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+    }
+
+    .heading {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .category-header {
+        padding: 12px 15px;
         font-size: 1.3rem;
     }
-    .content h4{
-        font-size: 1.3rem;
-    }
-    .content p {
-        font-size: 0.9rem;
-        color: white;
-        
-    }
-}
 
-
-#menu-icon {
-    display: none;    
-    font-size: 3.6rem;
-    cursor: pointer;
-}
-
-/* Ekran genişliği 600px ve altına düştüğünde */
-@media (max-width: 600px) {
-    .navbar {
-        display: none; /* Menü gizlenir */
-        flex-direction: column; /* Açılınca dikey görünsün */
-    }
-    
-    #menu-icon {
-        display: block; /* Hamburger ikonu göster */
-    }
-    
-    .navbar.active {
-        display: flex; /* İkon tıklanınca menü görünür hale gelir */
-        position: absolute;
-        top: 100%; /* Üst menünün hemen altına gelir */
-        left: 0;
-        background-color: white;
-        width: 100%;
-        padding: 1rem 0;
+    .card-box {
+        padding: 12px 15px;
     }
 
-    .navbar a {
-        padding: 1rem;
-        text-align: center;
-        width: 100%;
-        color: #000;
+    .card-box h4 {
+        font-size: 1.1rem;
+    }
+
+    .card-box span {
+        font-size: 1.1rem;
+        padding: 5px 10px;
     }
 }

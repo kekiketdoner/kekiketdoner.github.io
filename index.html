@@ -5,6 +5,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kekik Et Döner Menü</title>
     <link rel="stylesheet" href="css/icerik.css">
+    <style>
+        .loading {
+            text-align: center;
+            padding: 20px;
+            font-size: 1.2rem;
+            color: #666;
+        }
+        .category-header {
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            padding: 20px 30px;
+            margin: 20px 0;
+            border-radius: 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #b00;
+            font-size: 1.6rem;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .category-header:hover {
+            background: linear-gradient(145deg, #f8f8f8, #eeeeee);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .category-content {
+            display: none;
+            padding: 10px 20px;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .category-content.active {
+            display: block;
+        }
+        .toggle-icon {
+            font-size: 1.6rem;
+            transition: transform 0.3s ease;
+            color: #b00;
+            opacity: 0.8;
+        }
+        .category-header.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+        .card-box {
+            background: white;
+            padding: 20px 25px;
+            margin: 15px 0;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        .card-box:hover {
+            transform: translateX(5px);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+        }
+        .card-box .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .card-box h4 {
+            margin: 0;
+            color: #333;
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+        .card-box span {
+            color: #b00;
+            font-weight: 600;
+            font-size: 1.4rem;
+            background: rgba(187,0,0,0.05);
+            padding: 8px 16px;
+            border-radius: 25px;
+        }
+        #menu {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+        .heading {
+            text-align: center;
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body>
     <header class="header" style="display:flex; justify-content:space-between; align-items:center; padding:10px 30px;">
@@ -16,26 +110,8 @@
     </header>
     <section class="card" id="menu">
         <h2 class="heading">Menü</h2>
-        <div class="card-container">
-            <div class="card-box"><div class="content"><h4>1000 gr Et Döner</h4><span>1500 TL</span></div></div>
-            <div class="card-box"><div class="content"><h4>500 gr Et Döner</h4><span>750 TL</span></div></div>
-            <div class="card-box"><div class="content"><h4>250 gr Et Döner</h4><span>375 TL</span></div></div>
-            <div class="card-box"><div class="content"><h4>200 gr Et Döner</h4><span>300 TL</span></div></div>
-            <div class="card-box"><div class="content"><h4>150 gr Et Döner</h4><span>225 TL</span></div></div>
-            <div class="card-box"><div class="content"><h4>100 gr Et Döner</h4><span>150 TL</span></div></div>
-            <div class="card-box"><div class="content"><h4>100 gr Lavaş Döner</h4><span>150 TL</span></div></div>
-            <div class="card-box"><div class="content"><h4>150 gr Lavaş Döner</h4><span>225 TL</span></div></div>
-            <div class="card-box"><div class="content"><h4>100 gr Tombik Döner</h4><span>150 TL</span></div></div>
-            <div class="card-box"><div class="content"><h4>150 gr Tombik Döner</h4><span>225 TL</span></div></div>
-            <div class="card-box"><div class="content"><h4>100 gr Ekmek Arası Döner</h4><span>150 TL</span></div></div>
-            <div class="card-box"><div class="content"><h4>100 gr Pilav Üstü Döner</h4><span>190 TL</span></div></div>
-            <div class="card-box"><div class="content"><h4>150 gr Pilav Üstü Döner</h4><span>265 TL</span></div></div>
-            <div class="card-box"><div class="content"><h4>200 gr Pilav Üstü Döner</h4><span>340 TL</span></div></div>
-            <div class="card-box"><div class="content"><h4>Kutu Ayran</h4><span>20 TL</span></div></div>
-            <div class="card-box"><div class="content"><h4>Kutu Ayran Ekşi</h4><span>35 TL</span></div></div>
-            <div class="card-box"><div class="content"><h4>Şalgam Suyu</h4><span>45 TL</span></div></div>
-            <div class="card-box"><div class="content"><h4>Kutu Cola</h4><span>45 TL</span></div></div>
-            <div class="card-box"><div class="content"><h4>Su</h4><span>15 TL</span></div></div>
+        <div class="card-container" id="menuContainer">
+            <div class="loading">Menü yükleniyor...</div>
         </div>
     </section>
     <footer style="text-align:center; margin-top:40px; color:#333; font-size:1.1rem;">
@@ -46,5 +122,118 @@
             <span>📞 0532 566 02 51</span>
         </div>
     </footer>
+
+    <!-- Firebase SDK'larını import et -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+        import { getDatabase, ref, get, child } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+
+        // Firebase yapılandırması
+        const firebaseConfig = {
+            apiKey: "AIzaSyD62mfWRsarqHHpkeu5XNUXs7i-pXvb2_0",
+            authDomain: "kekiketdonermenu.firebaseapp.com",
+            databaseURL: "https://kekiketdonermenu-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "kekiketdonermenu",
+            storageBucket: "kekiketdonermenu.firebasestorage.app",
+            messagingSenderId: "14565928196",
+            appId: "1:14565928196:web:f0e1530c4b881215827451"
+        };
+
+        try {
+            // Firebase'i başlat
+            const app = initializeApp(firebaseConfig);
+
+            // Database referansını al
+            const dbRef = ref(getDatabase());
+
+            // Menü ve kategori verilerini aynı anda al
+            Promise.all([
+                get(child(dbRef, 'menu')),
+                get(child(dbRef, 'categories'))
+            ]).then(([menuSnapshot, categoriesSnapshot]) => {
+                
+                if (menuSnapshot.exists()) {
+                    const menuData = menuSnapshot.val();
+                    const categoriesData = categoriesSnapshot.exists() ? categoriesSnapshot.val() : {};
+                    const menuContainer = document.getElementById('menuContainer');
+                    menuContainer.innerHTML = ''; // Loading mesajını temizle
+
+                    // Kategorilere göre grupla
+                    const categorizedItems = {
+                        kiloluk: { name: 'Kiloluk Döner', items: [] },
+                        porsiyon: { name: 'Porsiyon Döner', items: [] },
+                        icecek: { name: 'İçecekler', items: [] }
+                    };
+
+                    // Ürünleri kategorilere ayır
+                    for (const key in menuData) {
+                        const item = menuData[key];
+                        const category = item.category || 'porsiyon';
+                        if (categorizedItems[category]) {
+                            categorizedItems[category].items.push(item);
+                        }
+                    }
+
+                    // Kategorileri sırala
+                    const sortedCategories = Object.entries(categoriesData)
+                        .sort(([, a], [, b]) => (a.order || 0) - (b.order || 0))
+                        .map(([key]) => key);
+
+                    // Her kategori için bölüm oluştur
+                    sortedCategories.forEach(categoryKey => {
+                        const category = categorizedItems[categoryKey];
+                        if (category && category.items.length > 0) {
+                            // Kategori başlığı
+                            const categoryHeader = document.createElement('div');
+                            categoryHeader.className = 'category-header active';
+                            categoryHeader.innerHTML = `
+                                <span>${category.name}</span>
+                                <span class="toggle-icon">▼</span>
+                            `;
+
+                            // Kategori içeriği
+                            const categoryContent = document.createElement('div');
+                            categoryContent.className = 'category-content active';
+
+                            // Kategori içindeki ürünleri sırala
+                            category.items.sort((a, b) => (a.order || 0) - (b.order || 0));
+
+                            // Kategori içindeki ürünler
+                            category.items.forEach(item => {
+                                const menuItem = document.createElement('div');
+                                menuItem.className = 'card-box';
+                                menuItem.innerHTML = `
+                                    <div class="content">
+                                        <h4>${item.name}</h4>
+                                        <span>${item.price} TL</span>
+                                    </div>
+                                `;
+                                categoryContent.appendChild(menuItem);
+                            });
+
+                            // Açılıp kapanma işlevi
+                            categoryHeader.addEventListener('click', () => {
+                                categoryHeader.classList.toggle('active');
+                                categoryContent.classList.toggle('active');
+                            });
+
+                            menuContainer.appendChild(categoryHeader);
+                            menuContainer.appendChild(categoryContent);
+                        }
+                    });
+                } else {
+                    document.getElementById('menuContainer').innerHTML = '<div class="loading">Menü bulunamadı.</div>';
+                }
+            }).catch((error) => {
+                console.error("Veri çekme hatası:", error);
+                document.getElementById('menuContainer').innerHTML = '<div class="loading">Menü yüklenirken bir hata oluştu.</div>';
+            });
+
+        } catch (error) {
+            console.error("Firebase başlatma hatası:", error);
+            document.getElementById('menuContainer').innerHTML = '<div class="loading">Sistem başlatılırken bir hata oluştu.</div>';
+        }
+    </script>
 </body>
 </html>
